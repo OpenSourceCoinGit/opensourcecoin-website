@@ -5,42 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open Source (OS) - Community-Driven Meme Coin</title>
     <link rel="stylesheet" href="style.css">
+    <!-- New Meta Tags -->
+    <meta name="description" content="Community-driven meme coin funding open-source projects. Transparent, decentralized, and built by developers.">
+    <meta property="og:image" content="https://opensourcecoin.org/images/logo.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
     <header>
         <img src="images/logo.png" alt="OS Logo" class="logo">
         <h1>Open Source (OS)</h1>
         <p>Transparent. Decentralized. Built by Developers.</p>
+        <div class="token-address">
+            <code>3s5NwTxQKZwegP9mzrod1JLdK9LV1uyRh9gmfyhkpump</code>
+            <button class="copy-btn" onclick="copyAddress()">Copy</button>
+        </div>
     </header>
 
     <section class="content">
-        <div class="card">
+        <div class="card chart-card">
             <h2>📊 Live Chart</h2>
-            <a href="https://dexscreener.com/solana/97cwukfzjigkstjhr6sjtiginjh5igkuy8abrnyote3d" target="_blank">View on DexScreener</a>
+            <a href="https://dexscreener.com/solana/97cwukfzjigkstjhr6sjtiginjh5igkuy8abrnyote3d" 
+               target="_blank" 
+               class="chart-link">
+               View Real-Time Chart on DexScreener
+            </a>
         </div>
 
-        <div class="card">
-            <h2>🔗 Links</h2>
+        <div class="card links-card">
+            <h2>🔗 Community Links</h2>
             <div class="links">
-                <a href="[TELEGRAM_LINK]" target="_blank">Telegram</a>
-                <a href="[TWITTER_LINK]" target="_blank">Twitter</a>
-                <a href="[GITHUB_LINK]" target="_blank">GitHub</a>
+                <a href="https://x.com/i/communities/1884361467094323703" 
+                   target="_blank" 
+                   class="twitter-link">
+                   Twitter Community
+                </a>
+                <a href="https://github.com/OpenSourceCoinGit" 
+                   target="_blank" 
+                   class="github-link">
+                   GitHub Repository
+                </a>
+                <!-- Add this when you create Telegram -->
+                <a href="#" target="_blank" class="telegram-link" style="display:none;">
+                   Telegram (Coming Soon)
+                </a>
             </div>
         </div>
 
-        <div class="card">
-            <h2>📜 About</h2>
+        <div class="card about-card">
+            <h2>📜 Project Details</h2>
             <p>OS is a meme coin with a mission to fund open-source projects and empower developers.</p>
-            <ul>
+            <ul class="features-list">
+                <li>✅ Fully Audited Smart Contract</li>
                 <li>✅ 100% Open-Source Code</li>
-                <li>✅ Community-Governed</li>
-                <li>✅ Liquidity Locked</li>
+                <li>✅ Community-Governed Treasury</li>
+                <li>✅ Locked Liquidity (Proof Available)</li>
             </ul>
         </div>
     </section>
 
     <footer>
         <p>© 2024 Open Source (OS). All code is MIT Licensed.</p>
+        <div class="footer-links">
+            <a href="https://github.com/OpenSourceCoinGit" target="_blank">View Source Code</a>
+            <a href="#" target="_blank">Tokenomics</a>
+            <a href="#" target="_blank">Audit Report</a>
+        </div>
     </footer>
+
+    <script>
+    function copyAddress() {
+        const address = '3s5NwTxQKZwegP9mzrod1JLdK9LV1uyRh9gmfyhkpump';
+        navigator.clipboard.writeText(address).then(() => {
+            alert('Address copied to clipboard!');
+        });
+    }
+    </script>
 </body>
 </html>
