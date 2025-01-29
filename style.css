@@ -185,6 +185,19 @@ header {
     gap: 1.5rem;
 }
 
+.image-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.vertical-banner {
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
 .chart-link {
     background: var(--primary-color);
     color: white !important;
