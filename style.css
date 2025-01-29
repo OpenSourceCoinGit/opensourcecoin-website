@@ -251,6 +251,11 @@ header {
     font-size: 1.2em;
 }
 
+.telegram-link::before {
+    content: '📨';
+    font-size: 1.2em;
+}
+
 .features-list {
     list-style: none;
     padding-left: 0;
