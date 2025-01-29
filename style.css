@@ -185,6 +185,18 @@ header {
     gap: 1.5rem;
 }
 
+.live-ticker-card {
+    grid-column: span 2; /* Span two columns */
+    text-align: center;
+}
+
+#live-ticker {
+    padding: 1.5rem;
+    background: var(--surface-color);
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
 .chart-link {
     background: var(--primary-color);
     color: white !important;
@@ -315,20 +327,4 @@ footer {
         padding: 1.5rem;
     }
     
-    .header-controls {
-        flex-direction: column;
-    }
-    
-    .token-address {
-        width: 100%;
-    }
-    
-    .logo-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .title-group {
-        min-width: auto;
-    }
-}
+    .header-controls
