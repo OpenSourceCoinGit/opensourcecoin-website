@@ -134,10 +134,38 @@ header {
 .content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
     padding: 1rem;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.vertical-banner-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-banner {
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.center-card {
+    flex: 2;
+    margin: 0 1.5rem;
+}
+
+.right-card {
+    flex: 1;
 }
 
 .card {
@@ -177,25 +205,6 @@ header {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--accent-color);
-}
-
-.combined-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.image-container {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 1.5rem;
-}
-
-.vertical-banner {
-    width: 150px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .chart-link {
@@ -280,68 +289,19 @@ footer {
     text-decoration: none;
 }
 
-/* Community Card Styles */
-.community-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.community-card::before {
-    content: "✨";
-    position: absolute;
-    font-size: 4rem;
-    opacity: 0.1;
-    right: -10px;
-    bottom: -20px;
-}
-
-.callout {
-    font-style: italic;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: var(--text-color);
-}
-
-.contribute-link {
-    display: block;
-    background: var(--accent-color);
-    color: white !important;
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1rem 0;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.contribute-link:hover {
-    transform: scale(1.05);
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-    .content {
-        grid-template-columns: 1fr;
-    }
-    
-    header {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    
-    .header-controls {
+    .main-content {
         flex-direction: column;
+        align-items: center;
     }
-    
-    .token-address {
+
+    .vertical-banner-container {
+        margin-bottom: 1.5rem;
+    }
+
+    .center-card, .right-card {
+        margin: 0;
         width: 100%;
-    }
-    
-    .logo-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .title-group {
-        min-width: auto;
     }
 }
