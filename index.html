@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Open Source (&dollar;OS) - Community-Driven Meme Coin</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="images/banner.webp" as="image">
     <meta name="description" content="Community-driven meme coin funding open-source projects. Transparent, decentralized, and built by developers.">
-    <meta property="og:image" content="https://opensourcecoin.org/images/logo.png">
+    <meta property="og:image" content="https://opensourcecoin.org/images/logo.webp">
+    
+    <!-- Favicon Setup -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="images/logo.png" alt="OS Logo" class="logo">
+            <img src="images/logo.webp" alt="OS Logo" class="logo" width="120" height="120">
             <div class="title-group">
                 <h1>Open Source (&dollar;OS)</h1>
                 <p>Transparent. Decentralized. Built by Developers.</p>
@@ -21,14 +31,14 @@
         <div class="header-controls">
             <div class="token-address">
                 <code>3s5NwTxQKZwegP9mzrod1JLdK9LV1uyRh9gmfyhkpump</code>
-                <button class="copy-btn" onclick="copyAddress()">Copy</button>
+                <button class="copy-btn" onclick="copyAddress()" aria-label="Copy token address">Copy</button>
             </div>
-            <button class="theme-toggle" onclick="toggleTheme()">🌞</button>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌞</button>
         </div>
     </header>
 
     <section class="hero-banner">
-        <img src="images/banner.png" alt="Community-Driven Development Banner" class="banner-image">
+        <img src="images/banner.webp" alt="Community-Driven Development Banner" class="banner-image" width="800" height="300">
     </section>
 
     <section class="content">
@@ -36,6 +46,7 @@
             <h2>📊 Live Chart</h2>
             <a href="https://dexscreener.com/solana/97cwukfzjigkstjhr6sjtiginjh5igkuy8abrnyote3d" 
                target="_blank" 
+               rel="noopener noreferrer"
                class="chart-link">
                View Real-Time Chart on DexScreener
             </a>
@@ -45,10 +56,16 @@
             <h2>💡 Shape the Future</h2>
             <p>We're building something revolutionary together! Have ideas for features, partnerships, or improvements?</p>
             <div class="links">
-                <a href="https://github.com/OpenSourceCoinGit" target="_blank" class="contribute-link">
+                <a href="https://github.com/OpenSourceCoinGit" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="contribute-link">
                     Propose on GitHub
                 </a>
-                <a href="https://x.com/i/communities/1884361467094323703" target="_blank" class="twitter-link">
+                <a href="https://x.com/i/communities/1884361467094323703" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="twitter-link">
                     Discuss on Twitter
                 </a>
             </div>
@@ -60,15 +77,17 @@
             <div class="links">
                 <a href="https://x.com/i/communities/1884361467094323703" 
                    target="_blank" 
+                   rel="noopener noreferrer"
                    class="twitter-link">
                    Twitter Community
                 </a>
                 <a href="https://github.com/OpenSourceCoinGit" 
                    target="_blank" 
+                   rel="noopener noreferrer"
                    class="github-link">
                    GitHub Repository
                 </a>
-                <a href="#" target="_blank" class="telegram-link" style="display:none;">
+                <a href="#" target="_blank" class="telegram-link" style="display:none;" rel="noopener noreferrer">
                    Telegram (Coming Soon)
                 </a>
             </div>
@@ -89,11 +108,17 @@
     <footer>
         <p>© 2024 Open Source (OS). All code is made by & for the community.</p>
         <div class="footer-links">
-            <a href="https://github.com/OpenSourceCoinGit" target="_blank">View Source Code</a>
-            <a href="#" target="_blank">Tokenomics</a>
-            <a href="#" target="_blank">Audit Report</a>
+            <a href="https://github.com/OpenSourceCoinGit" target="_blank" rel="noopener noreferrer">View Source Code</a>
+            <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a>
         </div>
     </footer>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent">
+        <p>We use cookies to enhance your experience. By continuing you agree to our use of cookies.</p>
+        <button class="cookie-accept" onclick="this.parentElement.style.display = 'none'">Accept</button>
+    </div>
 
     <script>
     // Theme Management
@@ -115,7 +140,15 @@
     function copyAddress() {
         const address = '3s5NwTxQKZwegP9mzrod1JLdK9LV1uyRh9gmfyhkpump';
         navigator.clipboard.writeText(address).then(() => {
-            alert('Address copied to clipboard!');
+            const btn = document.querySelector('.copy-btn');
+            btn.textContent = 'Copied!';
+            btn.style.backgroundColor = '#27ae60';
+            setTimeout(() => {
+                btn.textContent = 'Copy';
+                btn.style.backgroundColor = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
         });
     }
     </script>
