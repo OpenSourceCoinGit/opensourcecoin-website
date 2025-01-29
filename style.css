@@ -153,6 +153,38 @@ header {
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
+.community-ownership-card {
+    grid-column: 1 / -1; /* Span full width */
+    text-align: center;
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.community-ownership-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.community-ownership-card p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.community-ownership-card .callout {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.combined-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .chart-link {
     background: var(--primary-color);
     color: white !important;
