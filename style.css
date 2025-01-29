@@ -1,4 +1,6 @@
+/* style.css */
 :root {
+    /* Dark Theme Defaults */
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
     --accent-color: #e74c3c;
@@ -9,7 +11,8 @@
     --hover-brightness: 1.15;
 }
 
-[data-theme="light"] {
+:root[data-theme="light"] {
+    /* Light Theme Overrides */
     --text-color: #2c3e50;
     --bg-color: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     --surface-color: rgba(255, 255, 255, 0.95);
