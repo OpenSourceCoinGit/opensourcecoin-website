@@ -18,9 +18,12 @@
                 <p>Transparent. Decentralized. Built by Developers.</p>
             </div>
         </div>
-        <div class="token-address">
-            <code>3s5NwTxQKZwegP9mzrod1JLdK9LV1uyRh9gmfyhkpump</code>
-            <button class="copy-btn" onclick="copyAddress()">Copy</button>
+        <div class="header-controls">
+            <div class="token-address">
+                <code>3s5NwTxQKZwegP9mzrod1JLdK9LV1uyRh9gmfyhkpump</code>
+                <button class="copy-btn" onclick="copyAddress()">Copy</button>
+            </div>
+            <button class="theme-toggle" onclick="toggleTheme()">🌞</button>
         </div>
     </header>
 
@@ -36,6 +39,20 @@
                class="chart-link">
                View Real-Time Chart on DexScreener
             </a>
+        </div>
+
+        <div class="card community-card">
+            <h2>💡 Shape the Future</h2>
+            <p>We're building something revolutionary together! Have ideas for features, partnerships, or improvements?</p>
+            <div class="links">
+                <a href="https://github.com/OpenSourceCoinGit" target="_blank" class="contribute-link">
+                    Propose on GitHub
+                </a>
+                <a href="https://x.com/i/communities/1884361467094323703" target="_blank" class="twitter-link">
+                    Discuss on Twitter
+                </a>
+            </div>
+            <p class="callout">This isn't just our project - it's yours. Let's redefine open-source together!</p>
         </div>
 
         <div class="card links-card">
@@ -79,6 +96,26 @@
     </footer>
 
     <script>
+    // Theme Management
+    document.documentElement.setAttribute('data-theme', 'dark');
+
+    function toggleTheme() {
+        const html = document.documentElement;
+        const theme = html.getAttribute('data-theme');
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', newTheme);
+        document.querySelector('.theme-toggle').textContent = newTheme === 'dark' ? '🌞' : '🌜';
+        localStorage.setItem('theme', newTheme);
+    }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-toggle').textContent = savedTheme === 'dark' ? '🌞' : '🌜';
+    }
+
+    // Copy Address Function
     function copyAddress() {
         const address = '3s5NwTxQKZwegP9mzrod1JLdK9LV1uyRh9gmfyhkpump';
         navigator.clipboard.writeText(address).then(() => {
